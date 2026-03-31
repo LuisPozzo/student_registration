@@ -1,20 +1,45 @@
+from functions import *
+from storage import load_data, save_data
+
+def menu():
+    while True:
+        print("=== STUDENT MANAGEMENT SYSTEM ===")
+        print("1. Add")
+        print("2. Show")
+        print("3. Find")
+        print("4. Update")
+        print("5. Delete")
+        print("6. Exit")
+
+        option = input("Choose an option: ")
+        # while option not in ["1", "2", "3", "4", "5", "6"]:
+        #     print("Invalid option. Try again.\n")
+        #     option = input("Choose an option: ")
 
 
-estudiantes = {}
-iterador = int ( input ('cantidad de registros a realizar: '))
+        if option == "1":
+            add_student()
+        elif option == "2":
+            show_students()
+        elif option == "3":
+            find_student()
+        elif option == "4":
+            update_student()
+        elif option == "5":
+            delete_student()
+        elif option == "6":
+            save_data()
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid option.\n")
 
-for i in range (iterador):
-    id_estudiante = len(estudiantes) + 1
-    print (f'Registro {i+1}:')
-    name = input ('Ingresa el nombre: ')
-    lastname  = input ('Ingresa el apellido: ')
 
-    estudiantes [id_estudiante] =    {'name' : name, 'lastname':lastname }
-    print (f'Estudiante {name} {lastname} registrado con éxito.\n')    
+# Load data before starting
+load_data() # Cargar datos antes de iniciar
 
-for id_est, datos in estudiantes.items():
-        print(f"{id_est:<5} {datos['name']:<15} {datos['lastname']:<15}")
 
-        print ("-" * 42)
-        
-print(f"Total de estudiantes: {len(estudiantes)}")
+# Run program
+menu()
+
+

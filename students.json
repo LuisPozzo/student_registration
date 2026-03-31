@@ -1,0 +1,16 @@
+[
+    {
+        "id": 123,
+        "name": "lis",
+        "age": 20,
+        "course": "ssssss",
+        "status": true
+    },
+    {
+        "id": 123654,
+        "name": "POZZO",
+        "age": 20,
+        "course": "PA\u00d1OL",
+        "status": true
+    }
+]
